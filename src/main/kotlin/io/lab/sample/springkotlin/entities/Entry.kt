@@ -1,4 +1,4 @@
-package io.lab.sample.springkotlin.model
+package io.lab.sample.springkotlin.entities
 
 class Entry {
 }

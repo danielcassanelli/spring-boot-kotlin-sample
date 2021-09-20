@@ -1,16 +1,16 @@
-package io.lab.sample.springkotlin.repository.infrastructure.database.dataclass
+package io.lab.sample.springkotlin.repository.database.dataclass
 
-import io.lab.sample.springkotlin.model.EntryStatus
-import io.lab.sample.springkotlin.model.EntryType
-import io.lab.sample.springkotlin.repository.infrastructure.database.DatabaseContext
+import io.lab.sample.springkotlin.entities.EntryStatus
+import io.lab.sample.springkotlin.entities.EntryType
+import io.lab.sample.springkotlin.repository.database.DatabaseContext
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters
 import java.math.BigDecimal
 import java.time.LocalDate
 import javax.persistence.*
 
 @Entity
-@Table(name = "entry", schema = DatabaseContext.SCHEMA)
-data class EntryRegister(
+@Table(name = "Entry", schema = DatabaseContext.SCHEMA)
+data class EntryDataClass(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -27,7 +27,7 @@ data class EntryRegister(
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private val user: UserRegister? = null,
+    private val user: UserDataClass? = null,
 
     @Column(name = "value")
     private val value: BigDecimal? = null,

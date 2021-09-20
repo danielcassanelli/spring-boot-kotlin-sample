@@ -1,6 +1,6 @@
-package io.lab.sample.springkotlin.repository.infrastructure.database.dataclass
+package io.lab.sample.springkotlin.repository.database.dataclass
 
-import io.lab.sample.springkotlin.repository.infrastructure.database.DatabaseContext
+import io.lab.sample.springkotlin.repository.database.DatabaseContext
 import javax.persistence.*
 
 /***
@@ -8,9 +8,10 @@ import javax.persistence.*
  * If the 'name' parameter is omitted, a table will be created with de entity name
  */
 @Entity
-@Table(name = "user", schema = DatabaseContext.SCHEMA)
-data class UserRegister(
+@Table(name = "User", schema = DatabaseContext.SCHEMA)
+data class UserDataClass(
     @Column(name = "login") var login: String,
+    var email:String,
     var firstname: String,
     var lastname: String,
     var description: String,

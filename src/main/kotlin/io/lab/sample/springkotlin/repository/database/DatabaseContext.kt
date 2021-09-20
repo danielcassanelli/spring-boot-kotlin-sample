@@ -1,4 +1,4 @@
-package io.lab.sample.springkotlin.repository.infrastructure.database
+package io.lab.sample.springkotlin.repository.database
 
 object DatabaseContext {
     const val SCHEMA = "financialplanning"
